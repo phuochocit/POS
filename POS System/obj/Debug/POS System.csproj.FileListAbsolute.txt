@@ -1,0 +1,27 @@
+D:\POS\POS System\bin\Debug\POS System.exe.config
+D:\POS\POS System\bin\Debug\POS System.exe
+D:\POS\POS System\bin\Debug\POS System.pdb
+D:\POS\POS System\obj\Debug\POS System.csproj.AssemblyReference.cache
+D:\POS\POS System\obj\Debug\POS_System.frm_Dangnhap.resources
+D:\POS\POS System\obj\Debug\POS_System.Properties.Resources.resources
+D:\POS\POS System\obj\Debug\POS System.csproj.GenerateResource.cache
+D:\POS\POS System\obj\Debug\POS System.csproj.CoreCompileInputs.cache
+D:\POS\POS System\obj\Debug\POS System.exe
+D:\POS\POS System\obj\Debug\POS System.pdb
+D:\POS\POS System\obj\Debug\POS_System.frm_Homepage.resources
+D:\POS\POS System\obj\Debug\POS_System.frm_Order.resources
+D:\Zalo Received Files\POS\POS System\bin\Debug\POS System.exe.config
+D:\Zalo Received Files\POS\POS System\bin\Debug\POS System.exe
+D:\Zalo Received Files\POS\POS System\bin\Debug\POS System.pdb
+D:\Zalo Received Files\POS\POS System\obj\Debug\POS System.csproj.AssemblyReference.cache
+D:\Zalo Received Files\POS\POS System\obj\Debug\POS_System.frm_Homepage.resources
+D:\Zalo Received Files\POS\POS System\obj\Debug\POS_System.frm_Dangnhap.resources
+D:\Zalo Received Files\POS\POS System\obj\Debug\POS_System.frm_Order.resources
+D:\Zalo Received Files\POS\POS System\obj\Debug\POS_System.Properties.Resources.resources
+D:\Zalo Received Files\POS\POS System\obj\Debug\POS System.csproj.GenerateResource.cache
+D:\Zalo Received Files\POS\POS System\obj\Debug\POS System.csproj.CoreCompileInputs.cache
+D:\Zalo Received Files\POS\POS System\obj\Debug\POS System.exe
+D:\Zalo Received Files\POS\POS System\obj\Debug\POS System.pdb
+D:\POS\POS System\obj\Debug\POS_System.frm_thanhToan.resources
+D:\POS\POS System\bin\Debug\QRCoder.dll
+D:\POS\POS System\obj\Debug\POS System.csproj.Up2Date

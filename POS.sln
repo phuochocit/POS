@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POS_GUI", "POS System\POS_GUI.csproj", "{3113340E-C1C1-44E3-AB23-8AB85613B056}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POS_DAL", "POS_DAL\POS_DAL.csproj", "{6103C74D-3B56-4786-B6B0-40F5E5DF8FC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POS_BUS", "POS_BUS\POS_BUS.csproj", "{F4CE8F4A-065B-4E04-B40B-306B554254E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3113340E-C1C1-44E3-AB23-8AB85613B056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3113340E-C1C1-44E3-AB23-8AB85613B056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3113340E-C1C1-44E3-AB23-8AB85613B056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3113340E-C1C1-44E3-AB23-8AB85613B056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6103C74D-3B56-4786-B6B0-40F5E5DF8FC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6103C74D-3B56-4786-B6B0-40F5E5DF8FC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6103C74D-3B56-4786-B6B0-40F5E5DF8FC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6103C74D-3B56-4786-B6B0-40F5E5DF8FC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4CE8F4A-065B-4E04-B40B-306B554254E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4CE8F4A-065B-4E04-B40B-306B554254E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4CE8F4A-065B-4E04-B40B-306B554254E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4CE8F4A-065B-4E04-B40B-306B554254E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41FE9AA2-341F-4D38-B299-7AA0511821AA}
+	EndGlobalSection
+EndGlobal

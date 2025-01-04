@@ -1,0 +1,12 @@
+D:\POS\POS_DAL\bin\Debug\POS_DAL.dll.config
+D:\POS\POS_DAL\bin\Debug\POS_DAL.dll
+D:\POS\POS_DAL\bin\Debug\POS_DAL.pdb
+D:\POS\POS_DAL\bin\Debug\EntityFramework.dll
+D:\POS\POS_DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\POS\POS_DAL\bin\Debug\EntityFramework.xml
+D:\POS\POS_DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\POS\POS_DAL\obj\Debug\POS_DAL.csproj.AssemblyReference.cache
+D:\POS\POS_DAL\obj\Debug\POS_DAL.csproj.CoreCompileInputs.cache
+D:\POS\POS_DAL\obj\Debug\POS_DAL.csproj.Up2Date
+D:\POS\POS_DAL\obj\Debug\POS_DAL.dll
+D:\POS\POS_DAL\obj\Debug\POS_DAL.pdb

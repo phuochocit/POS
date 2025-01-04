@@ -1,0 +1,27 @@
+D:\POS\POS System\obj\Debug\POS_GUI.csproj.AssemblyReference.cache
+D:\POS\POS System\obj\Debug\POS_System.frmHistory.resources
+D:\POS\POS System\obj\Debug\POS_System.frmHomepage.resources
+D:\POS\POS System\obj\Debug\POS_System.frmLogin.resources
+D:\POS\POS System\obj\Debug\POS_System.frmOrder.resources
+D:\POS\POS System\obj\Debug\POS_System.frmPay.resources
+D:\POS\POS System\obj\Debug\POS_System.frmRevenueReport.resources
+D:\POS\POS System\obj\Debug\POS_GUI.csproj.GenerateResource.cache
+D:\POS\POS System\obj\Debug\POS_GUI.csproj.CoreCompileInputs.cache
+D:\POS\POS System\bin\Debug\POS System.exe.config
+D:\POS\POS System\bin\Debug\POS System.exe
+D:\POS\POS System\bin\Debug\POS System.pdb
+D:\POS\POS System\bin\Debug\EntityFramework.dll
+D:\POS\POS System\bin\Debug\EntityFramework.SqlServer.dll
+D:\POS\POS System\bin\Debug\POS_BUS.dll
+D:\POS\POS System\bin\Debug\POS_DAL.dll
+D:\POS\POS System\bin\Debug\QRCoder.dll
+D:\POS\POS System\bin\Debug\POS_BUS.pdb
+D:\POS\POS System\bin\Debug\POS_BUS.dll.config
+D:\POS\POS System\bin\Debug\POS_DAL.pdb
+D:\POS\POS System\bin\Debug\POS_DAL.dll.config
+D:\POS\POS System\bin\Debug\EntityFramework.xml
+D:\POS\POS System\bin\Debug\EntityFramework.SqlServer.xml
+D:\POS\POS System\obj\Debug\POS_System.Properties.Resources.resources
+D:\POS\POS System\obj\Debug\POS_GUI.csproj.Up2Date
+D:\POS\POS System\obj\Debug\POS System.exe
+D:\POS\POS System\obj\Debug\POS System.pdb

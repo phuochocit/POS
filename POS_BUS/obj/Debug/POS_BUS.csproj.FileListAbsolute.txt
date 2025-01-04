@@ -1,0 +1,15 @@
+D:\POS\POS_BUS\bin\Debug\POS_BUS.dll.config
+D:\POS\POS_BUS\bin\Debug\POS_BUS.dll
+D:\POS\POS_BUS\bin\Debug\POS_BUS.pdb
+D:\POS\POS_BUS\bin\Debug\EntityFramework.dll
+D:\POS\POS_BUS\bin\Debug\EntityFramework.SqlServer.dll
+D:\POS\POS_BUS\bin\Debug\POS_DAL.dll
+D:\POS\POS_BUS\bin\Debug\POS_DAL.pdb
+D:\POS\POS_BUS\bin\Debug\POS_DAL.dll.config
+D:\POS\POS_BUS\bin\Debug\EntityFramework.xml
+D:\POS\POS_BUS\bin\Debug\EntityFramework.SqlServer.xml
+D:\POS\POS_BUS\obj\Debug\POS_BUS.csproj.AssemblyReference.cache
+D:\POS\POS_BUS\obj\Debug\POS_BUS.csproj.CoreCompileInputs.cache
+D:\POS\POS_BUS\obj\Debug\POS_BUS.csproj.Up2Date
+D:\POS\POS_BUS\obj\Debug\POS_BUS.dll
+D:\POS\POS_BUS\obj\Debug\POS_BUS.pdb
