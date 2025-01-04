@@ -119,5 +119,10 @@ namespace POS_System
             // TODO: Thêm logic xử lý cho nút Chấm công
             MessageBox.Show("Chức năng đang được phát triển.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void frmHomepage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

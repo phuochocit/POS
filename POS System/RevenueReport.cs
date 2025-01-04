@@ -42,11 +42,6 @@ namespace POS_System
 
         }
 
-        private void btnDoanhthuchitiet_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDanhsachhoadon_Click(object sender, EventArgs e)
         {
             try
@@ -126,9 +121,14 @@ namespace POS_System
             }
         }
 
-        private void dgvRevenueReport_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnChiTietHoaDon_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmRevenueReport_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -99,5 +99,10 @@ namespace POS_System
         {
 
         }
+
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

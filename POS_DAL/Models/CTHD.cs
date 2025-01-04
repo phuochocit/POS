@@ -19,8 +19,8 @@ namespace POS_DAL.Models
         [StringLength(6)]
         public string MASP { get; set; }
 
-        [StringLength(255)]
-        public string TENKH { get; set; }
+        //[StringLength(255)]
+        //public string TENKH { get; set; }
 
         [Column(TypeName = "money")]
         public decimal GIATIEN { get; set; }

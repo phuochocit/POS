@@ -50,17 +50,17 @@
             // 
             // btnChiTietHoaDon
             // 
-            this.btnChiTietHoaDon.Location = new System.Drawing.Point(215, 51);
+            this.btnChiTietHoaDon.Location = new System.Drawing.Point(418, 51);
             this.btnChiTietHoaDon.Name = "btnChiTietHoaDon";
             this.btnChiTietHoaDon.Size = new System.Drawing.Size(197, 36);
             this.btnChiTietHoaDon.TabIndex = 1;
             this.btnChiTietHoaDon.Text = "Chi tiết hóa đơn";
             this.btnChiTietHoaDon.UseVisualStyleBackColor = true;
-            this.btnChiTietHoaDon.Click += new System.EventHandler(this.btnDoanhthuchitiet_Click);
+            this.btnChiTietHoaDon.Click += new System.EventHandler(this.btnChiTietHoaDon_Click);
             // 
             // btnDanhsachhoadon
             // 
-            this.btnDanhsachhoadon.Location = new System.Drawing.Point(418, 51);
+            this.btnDanhsachhoadon.Location = new System.Drawing.Point(215, 51);
             this.btnDanhsachhoadon.Name = "btnDanhsachhoadon";
             this.btnDanhsachhoadon.Size = new System.Drawing.Size(197, 36);
             this.btnDanhsachhoadon.TabIndex = 1;
@@ -90,7 +90,6 @@
             this.dgvRevenueReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRevenueReport.Size = new System.Drawing.Size(603, 375);
             this.dgvRevenueReport.TabIndex = 3;
-            this.dgvRevenueReport.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRevenueReport_CellContentClick);
             // 
             // dgvChiTietHoaDon
             // 
@@ -116,6 +115,7 @@
             this.Name = "frmRevenueReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Báo cáo doanh thu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmRevenueReport_FormClosed);
             this.ForeColorChanged += new System.EventHandler(this.frmRevenueReport_ForeColorChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRevenueReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).EndInit();

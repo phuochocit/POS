@@ -11,17 +11,21 @@ using POS_DAL.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data;
+using System.Linq;
 namespace POS_System
 {
 
     public partial class frmPay : Form
     {
+        private List<SANPHAM> cartItems;
         private readonly SanPhamService sanPhamService = new SanPhamService();
         private readonly string totalAmount;
         private readonly string amountInWords;
         private readonly string customerType;
         private readonly frmOrder orderForm;
-        public frmPay(string soTien, string tienBangChu, string khach, string sl, frmOrder orderForm)//DataTable
+        private DataTable selectedProductsTable = new DataTable();
+
+        public frmPay(string soTien, string tienBangChu, string khach, string sl, frmOrder orderForm, List<SANPHAM> cartItems, DataTable selectedProductsTable)
         {
             InitializeComponent();
             lbl_tienSo.Text = soTien;
@@ -29,7 +33,17 @@ namespace POS_System
             lblKhach.Text = khach;
             lblSL.Text = sl;
             this.orderForm = orderForm;
-            // Gán tham chiếu frmOrder
+            this.cartItems = cartItems;
+            this.cartItems = cartItems;
+            DisplayCartItems();
+        }
+        private void DisplayCartItems()
+        {
+            // Hiển thị dữ liệu giỏ hàng trên DataGridView trong Form2
+            foreach (var item in cartItems)
+            {
+                selectedProductsTable.Rows.Add(item.MASP, item.TENSP, item.SL, item.GIATIEN, item.SL * item.GIATIEN);
+            }
         }
 
         private string SoThanhChu(string soTien)
@@ -175,57 +189,118 @@ namespace POS_System
 
         private void btn_taoHD_Click(object sender, EventArgs e)
         {
+            //if (isTienMatSelected || isMoMoSelected || isChuyenKhoanSelected)
+            //{
+            //    string hinhThucThanhToan = "";
+
+            //    if (isTienMatSelected)
+            //        hinhThucThanhToan = "Tiền mặt";
+            //    else if (isMoMoSelected)
+            //        hinhThucThanhToan = "MoMo";
+            //    else if (isChuyenKhoanSelected)
+            //        hinhThucThanhToan = "Chuyển khoản";
+
+            //    // Lấy thông tin hóa đơn
+            //    string soTien = lbl_tienSo.Text;
+            //    string tenKhachHang = lblKhach.Text; // Lấy tên khách hàng từ giao diện (nếu có)
+            //    string maHoaDon = Guid.NewGuid().ToString().Substring(0, 11); // Tạo mã hóa đơn ngẫu nhiên
+
+            //    try
+            //    {
+            //        // Tạo đối tượng hóa đơn
+            //        HOADON hoaDon = new HOADON
+            //        {
+            //            MAHD = maHoaDon,
+            //            TENKH = tenKhachHang,
+            //            SL = int.Parse(lblSL.Text),
+            //            THOIGIAN = DateTime.Now,
+            //            HINHTHUC = hinhThucThanhToan
+            //        };
+
+            //        // Gọi lớp service để thêm hóa đơn vào cơ sở dữ liệu
+            //        HoaDonService hoaDonService = new HoaDonService();
+            //        hoaDonService.Add(hoaDon);
+
+            //        MessageBox.Show("Hóa đơn đã được tạo thành công", "Thông báo");
+
+            //        // Đóng form thanh toán và reset giỏ hàng
+            //        this.Close();
+            //        orderForm.ResetCart();
+
+
+            //        //updateCTHD(maHoaDon, DataTable);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Lỗi tạo hóa đơn: " + ex.Message, "Lỗi");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Vui lòng chọn phương thức thanh toán!", "Cảnh báo");
+            //}
             if (isTienMatSelected || isMoMoSelected || isChuyenKhoanSelected)
             {
-                string hinhThucThanhToan = "";
-
-                if (isTienMatSelected)
-                    hinhThucThanhToan = "Tiền mặt";
-                else if (isMoMoSelected)
-                    hinhThucThanhToan = "MoMo";
-                else if (isChuyenKhoanSelected)
-                    hinhThucThanhToan = "Chuyển khoản";
-
-                // Lấy thông tin hóa đơn
-                string soTien = lbl_tienSo.Text;
-                string tenKhachHang = lblKhach.Text; // Lấy tên khách hàng từ giao diện (nếu có)
-                string maHoaDon = Guid.NewGuid().ToString().Substring(0, 11); // Tạo mã hóa đơn ngẫu nhiên
+                string hinhThucThanhToan = isTienMatSelected ? "Tiền mặt" :
+                                           isMoMoSelected ? "MoMo" : "Chuyển khoản";
+                string maHoaDon = Guid.NewGuid().ToString().Substring(0, 11);
 
                 try
                 {
-                    // Tạo đối tượng hóa đơn
-                    HOADON hoaDon = new HOADON
+                    using (var dbContext = new POSContextDB())
                     {
-                        MAHD = maHoaDon,
-                        TENKH = tenKhachHang,
-                        SL = int.Parse(lblSL.Text),
-                        THOIGIAN = DateTime.Now,
-                        HINHTHUC = hinhThucThanhToan
-                    };
+                        // Tạo hóa đơn
+                        HOADON hoaDon = new HOADON
+                        {
+                            MAHD = maHoaDon,
+                            TENKH = lblKhach.Text,
+                            SL = int.Parse(lblSL.Text),
+                            THOIGIAN = DateTime.Now,
+                            HINHTHUC = hinhThucThanhToan
+                        };
+                        dbContext.HOADON.Add(hoaDon);
 
-                    // Gọi lớp service để thêm hóa đơn vào cơ sở dữ liệu
-                    HoaDonService hoaDonService = new HoaDonService();
-                    hoaDonService.Add(hoaDon);
+                        // Tạo chi tiết hóa đơn
+                        foreach (var item in cartItems)
+                        {
+                            CTHD cthd = new CTHD
+                            {
+                                MAHD = maHoaDon,
+                                MASP = item.MASP,
+                                SL = (int)item.SL,
+                                GIATIEN = (decimal)(item.GIATIEN * item.SL),
+                                HINHTHUC = hinhThucThanhToan
+                            };
+                            dbContext.CTHD.Add(cthd);
 
-                    MessageBox.Show("Hóa đơn đã được tạo thành công", "Thông báo");
+                            // Cập nhật số lượng trong kho
+                            var sanPham = dbContext.SANPHAM.FirstOrDefault(sp => sp.MASP == item.MASP);
+                            if (sanPham != null)
+                            {
+                                sanPham.SL -= item.SL;
+                            }
+                        }
 
-                    // Đóng form thanh toán và reset giỏ hàng
-                    this.Close();
-                    orderForm.ResetCart();
-
-
-                    //updateCTHD(maHoaDon, DataTable);
+                        dbContext.SaveChanges();
+                        MessageBox.Show("Thanh toán thành công!", "Thông báo");
+                        this.Close();
+                        orderForm.ResetCart(); // Reset giỏ hàng trong `frmOrder`
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi tạo hóa đơn: " + ex.Message, "Lỗi");
+                    MessageBox.Show("Lỗi thanh toán: " + ex.Message, "Lỗi");
                 }
             }
             else
             {
                 MessageBox.Show("Vui lòng chọn phương thức thanh toán!", "Cảnh báo");
             }
+        }
 
+        private void frmPay_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

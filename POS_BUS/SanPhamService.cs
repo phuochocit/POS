@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace POS_BUS
 {
     public class SanPhamService
-    {
+    {   
         POSContextDB context = new POSContextDB();
         public List<SANPHAM> GetProducts()
         {

@@ -216,6 +216,7 @@
             this.Name = "frmPay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thanh Toán";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPay_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

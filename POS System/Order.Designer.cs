@@ -108,7 +108,6 @@
             this.btn_Timsp.TabIndex = 6;
             this.btn_Timsp.Text = "Tìm";
             this.btn_Timsp.UseVisualStyleBackColor = false;
-            this.btn_Timsp.Click += new System.EventHandler(this.btn_Timsp_Click);
             // 
             // txt_Timsp
             // 
@@ -289,6 +288,7 @@
             this.Name = "frmOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmOrder_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOrder_FormClosed);
             this.Load += new System.EventHandler(this.frmOrder_Load);
             this.p_Sanpham.ResumeLayout(false);
             this.p_Danhmuc.ResumeLayout(false);

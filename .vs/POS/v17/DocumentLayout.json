@@ -3,19 +3,7 @@
   "WorkspaceRootPath": "D:\\POS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\revenuereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\revenuereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|d:\\pos\\pos system\\pay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\pay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\pay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\pay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|d:\\pos\\pos system\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -23,12 +11,36 @@
       "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\order.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\order.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\pay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\pay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\pay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\pay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\revenuereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\revenuereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\revenuereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\revenuereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -47,18 +59,6 @@
       "RelativeMoniker": "D:0:0:{F4CE8F4A-065B-4E04-B40B-306B554254E0}|POS_BUS\\POS_BUS.csproj|solutionrelative:pos_bus\\hoadonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|D:\\POS\\pos system\\homepage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3113340E-C1C1-44E3-AB23-8AB85613B056}|POS System\\POS_GUI.csproj|solutionrelative:pos system\\homepage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -70,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 763,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,20 +82,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Pay.cs",
-              "DocumentMoniker": "D:\\POS\\POS System\\Pay.cs",
-              "RelativeDocumentMoniker": "POS System\\Pay.cs",
-              "ToolTip": "D:\\POS\\POS System\\Pay.cs",
-              "RelativeToolTip": "POS System\\Pay.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAYwBsAAAArAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\POS\\POS System\\Order.cs",
+              "RelativeDocumentMoniker": "POS System\\Order.cs",
+              "ToolTip": "D:\\POS\\POS System\\Order.cs",
+              "RelativeToolTip": "POS System\\Order.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAqwBsAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T06:51:24.431Z",
+              "WhenOpened": "2025-01-02T06:43:10.218Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Order.cs [Design]",
               "DocumentMoniker": "D:\\POS\\POS System\\Order.cs",
               "RelativeDocumentMoniker": "POS System\\Order.cs",
@@ -106,31 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Order.Designer.cs",
-              "DocumentMoniker": "D:\\POS\\POS System\\Order.Designer.cs",
-              "RelativeDocumentMoniker": "POS System\\Order.Designer.cs",
-              "ToolTip": "D:\\POS\\POS System\\Order.Designer.cs",
-              "RelativeToolTip": "POS System\\Order.Designer.cs",
-              "ViewState": "AgIAAJEAAAAAAAAAAAASwKEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T05:09:57.334Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Order.cs",
-              "DocumentMoniker": "D:\\POS\\POS System\\Order.cs",
-              "RelativeDocumentMoniker": "POS System\\Order.cs",
-              "ToolTip": "D:\\POS\\POS System\\Order.cs",
-              "RelativeToolTip": "POS System\\Order.cs",
-              "ViewState": "AgIAAI8AAAAAAAAAAAA7wKAAAACKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T06:43:10.218Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Pay.cs [Design]",
               "DocumentMoniker": "D:\\POS\\POS System\\Pay.cs",
               "RelativeDocumentMoniker": "POS System\\Pay.cs",
@@ -141,32 +117,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "Pay.cs",
+              "DocumentMoniker": "D:\\POS\\POS System\\Pay.cs",
+              "RelativeDocumentMoniker": "POS System\\Pay.cs",
+              "ToolTip": "D:\\POS\\POS System\\Pay.cs",
+              "RelativeToolTip": "POS System\\Pay.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwCUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-02T06:51:24.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "RevenueReport.cs [Design]",
               "DocumentMoniker": "D:\\POS\\POS System\\RevenueReport.cs",
               "RelativeDocumentMoniker": "POS System\\RevenueReport.cs",
               "ToolTip": "D:\\POS\\POS System\\RevenueReport.cs [Design]",
               "RelativeToolTip": "POS System\\RevenueReport.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T15:57:33.702Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-28T15:57:33.702Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "RevenueReport.cs",
               "DocumentMoniker": "D:\\POS\\POS System\\RevenueReport.cs",
               "RelativeDocumentMoniker": "POS System\\RevenueReport.cs",
               "ToolTip": "D:\\POS\\POS System\\RevenueReport.cs",
               "RelativeToolTip": "POS System\\RevenueReport.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAqwIIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAmwH0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T05:56:44.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-02T05:56:44.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.cs",
+              "DocumentMoniker": "D:\\POS\\POS System\\Login.cs",
+              "RelativeDocumentMoniker": "POS System\\Login.cs",
+              "ToolTip": "D:\\POS\\POS System\\Login.cs",
+              "RelativeToolTip": "POS System\\Login.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAqwGgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T15:34:28.595Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "D:\\POS\\POS System\\Login.cs",
+              "RelativeDocumentMoniker": "POS System\\Login.cs",
+              "ToolTip": "D:\\POS\\POS System\\Login.cs [Design]",
+              "RelativeToolTip": "POS System\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T15:34:23.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "History.cs [Design]",
               "DocumentMoniker": "D:\\POS\\POS System\\History.cs",
               "RelativeDocumentMoniker": "POS System\\History.cs",
@@ -177,55 +186,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "SanPhamService.cs",
               "DocumentMoniker": "D:\\POS\\POS_BUS\\SanPhamService.cs",
               "RelativeDocumentMoniker": "POS_BUS\\SanPhamService.cs",
               "ToolTip": "D:\\POS\\POS_BUS\\SanPhamService.cs",
               "RelativeToolTip": "POS_BUS\\SanPhamService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T05:02:46.961Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "HoaDonService.cs",
-              "DocumentMoniker": "D:\\POS\\POS_BUS\\HoaDonService.cs",
-              "RelativeDocumentMoniker": "POS_BUS\\HoaDonService.cs",
-              "ToolTip": "D:\\POS\\POS_BUS\\HoaDonService.cs",
-              "RelativeToolTip": "POS_BUS\\HoaDonService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T15:09:40.075Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "CTHDService.cs",
-              "DocumentMoniker": "D:\\POS\\POS_BUS\\CTHDService.cs",
-              "RelativeDocumentMoniker": "POS_BUS\\CTHDService.cs",
-              "ToolTip": "D:\\POS\\POS_BUS\\CTHDService.cs",
-              "RelativeToolTip": "POS_BUS\\CTHDService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T14:17:30.72Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "History.cs",
-              "DocumentMoniker": "D:\\POS\\POS System\\History.cs",
-              "RelativeDocumentMoniker": "POS System\\History.cs",
-              "ToolTip": "D:\\POS\\POS System\\History.cs",
-              "RelativeToolTip": "POS System\\History.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAiwAwAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T05:56:07.05Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
               "Title": "HomePage.cs [Design]",
               "DocumentMoniker": "D:\\POS\\POS System\\HomePage.cs",
               "RelativeDocumentMoniker": "POS System\\HomePage.cs",
@@ -236,15 +209,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 8,
               "Title": "HomePage.cs",
               "DocumentMoniker": "D:\\POS\\POS System\\HomePage.cs",
               "RelativeDocumentMoniker": "POS System\\HomePage.cs",
               "ToolTip": "D:\\POS\\POS System\\HomePage.cs",
               "RelativeToolTip": "POS System\\HomePage.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAqwF8AAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAqwHwAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-01T05:59:44.469Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CTHDService.cs",
+              "DocumentMoniker": "D:\\POS\\POS_BUS\\CTHDService.cs",
+              "RelativeDocumentMoniker": "POS_BUS\\CTHDService.cs",
+              "ToolTip": "D:\\POS\\POS_BUS\\CTHDService.cs",
+              "RelativeToolTip": "POS_BUS\\CTHDService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-02T14:17:30.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "HoaDonService.cs",
+              "DocumentMoniker": "D:\\POS\\POS_BUS\\HoaDonService.cs",
+              "RelativeDocumentMoniker": "POS_BUS\\HoaDonService.cs",
+              "ToolTip": "D:\\POS\\POS_BUS\\HoaDonService.cs",
+              "RelativeToolTip": "POS_BUS\\HoaDonService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T15:09:40.075Z"
             },
             {
               "$type": "Document",

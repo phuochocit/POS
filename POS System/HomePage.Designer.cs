@@ -170,6 +170,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang chủ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmHomepage_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmHomepage_FormClosed);
             this.ResumeLayout(false);
 
         }
