@@ -77,9 +77,6 @@
             // cmb_Danhmuc
             // 
             this.cmb_Danhmuc.FormattingEnabled = true;
-            this.cmb_Danhmuc.Items.AddRange(new object[] {
-            "Tất cả sản phẩm",
-            ""});
             this.cmb_Danhmuc.Location = new System.Drawing.Point(3, 11);
             this.cmb_Danhmuc.Name = "cmb_Danhmuc";
             this.cmb_Danhmuc.Size = new System.Drawing.Size(231, 24);
@@ -111,6 +108,7 @@
             // 
             // txt_Timsp
             // 
+            this.txt_Timsp.BackColor = System.Drawing.SystemColors.Info;
             this.txt_Timsp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Timsp.Location = new System.Drawing.Point(3, 25);
             this.txt_Timsp.Name = "txt_Timsp";
@@ -271,7 +269,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1182, 753);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_SL);

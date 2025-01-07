@@ -25,36 +25,24 @@
             }
             public List<SANPHAM> GetCartItems()
             {
-                List<SANPHAM> items = new List<SANPHAM>();
+            List<SANPHAM> items = new List<SANPHAM>();
 
-                foreach (DataGridViewRow row in dgvGioHang.Rows)
+            foreach (DataGridViewRow row in dgvGioHang.Rows)
+            {
+                if (!row.IsNewRow && row.Cells["Mã SP"].Value != null)  // Đảm bảo không lấy dòng trống
                 {
-                    if (!row.IsNewRow)  // Ensure the row is not empty
+                    items.Add(new SANPHAM
                     {
-                        // Ensure columns are available before accessing
-                        if (dgvGioHang.Columns.Contains("Mã SP") &&
-                            dgvGioHang.Columns.Contains("Tên SP") &&
-                            dgvGioHang.Columns.Contains("Giá") &&
-                            dgvGioHang.Columns.Contains("SL") &&
-                            dgvGioHang.Columns.Contains("Thành tiền"))
-                        {
-                            items.Add(new SANPHAM
-                            {
-                                MASP = row.Cells["Mã SP"].Value.ToString(),
-                                TENSP = row.Cells["Tên SP"].Value.ToString(),
-                                SL = Convert.ToInt32(row.Cells["SL"].Value),
-                                GIATIEN = Convert.ToDecimal(row.Cells["Giá"].Value), // Correct name for Giá
-                            });
-                        }
-                        else
-                        {
-                            MessageBox.Show("One or more columns are missing in DataGridView", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
+                        MASP = row.Cells["Mã SP"].Value.ToString(),
+                        TENSP = row.Cells["Tên SP"].Value.ToString(),
+                        SL = Convert.ToInt32(row.Cells["SL"].Value),
+                        GIATIEN = Convert.ToDecimal(row.Cells["Giá"].Value),
+                    });
                 }
-
-                return items;
             }
+
+            return items;
+        }
             private void InitializeDataGridView()
             {
                 // Create the table to store selected products
@@ -92,96 +80,104 @@
 
             private void CreateProducts()
             {
-                // Lấy dữ liệu sản phẩm từ SanPhamService
-                List<POS_DAL.Models.SANPHAM> productsData = sanPhamService.GetProducts();
+            List<SANPHAM> productsData = sanPhamService.GetProducts();
 
-                // Chuyển đổi List thành DataTable
-                DataTable productTable = ConvertToDataTable(productsData);
+            for (int i = 0; i < productsData.Count; i++)
+            {
+                string productName = productsData[i].TENSP;
+                int productPrice = Convert.ToInt32(productsData[i].GIATIEN);
 
-                // Duyệt qua danh sách sản phẩm và tạo các nút
-                for (int i = 0; i < productTable.Rows.Count; i++)
+                // Lấy danh mục của sản phẩm
+                string category = GetProductCategory(productName);
+
+                Button productButton = new Button
                 {
-                    string productName = productTable.Rows[i]["TenSP"].ToString();
-                    int productPrice = Convert.ToInt32(productTable.Rows[i]["Gia"]);
+                    Size = new Size(100, 70),
+                    BackColor = Color.White,
+                    Text = $"{productName}\n{productPrice} VND",
+                    Tag = productName // Gắn tên sản phẩm vào Tag
+                };
 
-                    Button productButton = new Button
-                    {
-                        Size = new Size(100, 70),
-                        BackColor = Color.White,
-                        Text = $"{productName}\n{productPrice} VND",
-                        Tag = i // Lưu vị trí sản phẩm hoặc ID
-                    };
+                int row = i / 5;
+                int col = i % 5;
+                productButton.Location = new Point(20 + col * 100, 100 + row * 70);
 
-                    int row = i / 5;
-                    int col = i % 5;
-                    productButton.Location = new Point(20 + col * 100, 100 + row * 70);
+                productButton.Click += new EventHandler(ChooseProducts);
+                p_Sanpham.Controls.Add(productButton);
+            }
+        }
 
-                    productButton.Click += new EventHandler(ChooseProducts);
-                    p_Sanpham.Controls.Add(productButton);
+        private string GetProductCategory(string productName)
+        {
+            foreach (var category in productCategories)
+            {
+                if (category.Value.Contains(productName)) // Kiểm tra tên sản phẩm có nằm trong danh mục không
+                {
+                    return category.Key; // Trả về tên loại sản phẩm
                 }
             }
+            return "Khác"; // Trường hợp sản phẩm không thuộc danh mục nào
+        }
 
-            private void ChooseProducts(object sender, EventArgs e)
+        private void ChooseProducts(object sender, EventArgs e)
             {
-                //Button btn = sender as Button;
-                //int productIndex = (int)btn.Tag;
+            Button btn = sender as Button;
 
-                //// Lấy thông tin sản phẩm
-                //List<POS_DAL.Models.SANPHAM> productsData = sanPhamService.GetProducts();
-                //string productName = productsData[productIndex].TENSP;
-                //int productPrice = (int)productsData[productIndex].GIATIEN;
+            // Kiểm tra nút không bị null và Tag có chứa tên sản phẩm
+            if (btn != null && btn.Tag != null)
+            {
+                string productName = btn.Text.Split('\n')[0]; // Lấy tên sản phẩm từ Text
+                List<SANPHAM> productsData = sanPhamService.GetProducts();
 
-                //// Kiểm tra sản phẩm đã có trong DataGridView chưa
-                //DataRow existingRow = selectedProductsTable.AsEnumerable()
-                //    .FirstOrDefault(row => row["Tên SP"].ToString() == productName);
+                // Lấy thông tin sản phẩm theo tên
+                SANPHAM selectedProduct = productsData.FirstOrDefault(p => p.TENSP == productName);
 
-                //if (existingRow == null)
-                //{
-                //    selectedProductsTable.Rows.Add(productName, productPrice, 1, productPrice, "M", "Không có ghi chú");
-                //}
-                //else
-                //{
-                //    int quantity = (int)existingRow["SL"] + 1;
-                //    existingRow["SL"] = quantity;
-                //    existingRow["Thành tiền"] = quantity * productPrice;
-                //}
-
-                //UpdateTotalPrice();
-                //UpdateTotalItems();
-                Button btn = sender as Button;
-                int productIndex = (int)btn.Tag;
-
-                // Get product information
-                List<POS_DAL.Models.SANPHAM> productsData = sanPhamService.GetProducts();
-                string productID = productsData[productIndex].MASP;
-                string productName = productsData[productIndex].TENSP;
-                int productPrice = (int)productsData[productIndex].GIATIEN;
-
-                // Check if the product already exists in the DataGridView
-                DataRow existingRow = selectedProductsTable.AsEnumerable()
-                    .FirstOrDefault(row => row["Tên SP"].ToString() == productName);
-
-                if (existingRow == null)
+                if (selectedProduct != null)
                 {
-                    selectedProductsTable.Rows.Add(productID, productName, productPrice, 1, productPrice, "M", "Không có ghi chú");
+                    string productID = selectedProduct.MASP;
+                    int productPrice = (int)selectedProduct.GIATIEN;
+
+                    // Kiểm tra xem sản phẩm đã tồn tại trong DataGridView chưa
+                    DataRow existingRow = selectedProductsTable.AsEnumerable()
+                        .FirstOrDefault(row => row["Mã SP"].ToString() == productID);
+
+                    if (existingRow == null)
+                    {
+                        // Thêm sản phẩm mới vào bảng
+                        selectedProductsTable.Rows.Add(
+                            productID,
+                            productName,
+                            productPrice,
+                            1,                        // Số lượng mặc định là 1
+                            productPrice,             // Thành tiền = Giá x Số lượng
+                            "M",                      // Size mặc định
+                            "Không có ghi chú"        // Ghi chú mặc định
+                        );
+                    }
+                    else
+                    {
+                        // Cập nhật số lượng và thành tiền cho sản phẩm đã tồn tại
+                        int quantity = (int)existingRow["SL"] + 1;
+                        existingRow["SL"] = quantity;
+                        existingRow["Thành tiền"] = quantity * productPrice;
+                    }
+
+                    UpdateTotalPrice();
+                    UpdateTotalItems();
                 }
                 else
                 {
-                    int quantity = (int)existingRow["SL"] + 1;
-                    existingRow["SL"] = quantity;
-                    existingRow["Thành tiền"] = quantity * productPrice;
+                    MessageBox.Show("Không tìm thấy sản phẩm!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                UpdateTotalPrice();
-                UpdateTotalItems();
             }
+            else
+            {
+                MessageBox.Show("Không thể xác định sản phẩm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
             private void UpdateTotalPrice()
             {
-                //int total = selectedProductsTable.AsEnumerable()
-                //    .Sum(row => (int)row["Thành tiền"]);
-
-                //lbl_Thanhtien.Text = total.ToString("N0") + " VND";
                 int total = selectedProductsTable.AsEnumerable()
                 .Sum(row => (int)row["Thành tiền"]);
                 lbl_Thanhtien.Text = total.ToString("N0") + " VND";
@@ -315,13 +311,10 @@
                     Label lblQuantity = new Label { Text = "Số lượng:", Location = new Point(20, 20), AutoSize = true };
                     TextBox txtQuantity = new TextBox { Text = currentQuantity.ToString(), Location = new Point(100, 20), Width = 150 };
 
-                    Label lblSize = new Label { Text = "Size:", Location = new Point(20, 60), AutoSize = true };
-                    ComboBox comboSize = new ComboBox { Location = new Point(100, 60), Width = 150 };
-                    comboSize.Items.AddRange(new string[] { "S", "M", "L" });
-                    comboSize.SelectedItem = currentSize;
+                    
 
-                    Label lblNote = new Label { Text = "Ghi chú:", Location = new Point(20, 100), AutoSize = true };
-                    TextBox txtNote = new TextBox { Text = currentNote, Location = new Point(100, 100), Width = 150 };
+                    Label lblNote = new Label { Text = "Ghi chú:", Location = new Point(20, 60), AutoSize = true };
+                    TextBox txtNote = new TextBox { Text = currentNote, Location = new Point(100, 60), Width = 150 };
 
                     Button btnOK = new Button { Text = "OK", Location = new Point(100, 150), Width = 80 };
 
@@ -331,8 +324,7 @@
                         if (int.TryParse(txtQuantity.Text, out int newQuantity) && newQuantity > 0)
                         {
                             selectedRow.Cells["SL"].Value = newQuantity;
-                            selectedRow.Cells["Thành tiền"].Value = newQuantity * productPrice;
-                            selectedRow.Cells["Size"].Value = comboSize.SelectedItem.ToString();
+                            selectedRow.Cells["Thành tiền"].Value = newQuantity * productPrice;                     
                             selectedRow.Cells["Ghi chú"].Value = txtNote.Text;
 
                             UpdateTotalPrice(); // Cập nhật tổng tiền
@@ -348,8 +340,7 @@
                     // Thêm các control vào form
                     inputForm.Controls.Add(lblQuantity);
                     inputForm.Controls.Add(txtQuantity);
-                    inputForm.Controls.Add(lblSize);
-                    inputForm.Controls.Add(comboSize);
+
                     inputForm.Controls.Add(lblNote);
                     inputForm.Controls.Add(txtNote);
                     inputForm.Controls.Add(btnOK);
@@ -364,30 +355,6 @@
 
             private void btn_Xoa_Click(object sender, EventArgs e)
             {
-                //// Kiểm tra xem có dòng nào được chọn trong DataGridView hay không
-                //if (dgvGioHang.SelectedRows.Count > 0)
-                //{
-                //    // Hiển thị hộp thoại xác nhận xóa món
-                //    DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa món đã chọn?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                //    if (result == DialogResult.Yes)
-                //    {
-                //        // Xóa tất cả các dòng đã chọn
-                //        foreach (DataGridViewRow row in dgvGioHang.SelectedRows)
-                //        {
-                //            dgvGioHang.Rows.RemoveAt(row.Index);
-                //        }
-
-                //        // Cập nhật lại tổng tiền
-                //        UpdateTotalPrice();
-                //        UpdateTotalItems();  // Cập nhật tổng số món
-                //    }
-                //}
-                //else
-                //{
-                //    // Nếu không có dòng nào được chọn, hiển thị thông báo
-                //    MessageBox.Show("Vui lòng chọn món cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //}
                 if (dgvGioHang.SelectedRows.Count > 0)
                 {
                     DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa món đã chọn?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -417,60 +384,60 @@
 
             private void txt_Timsp_TextChanged(object sender, EventArgs e)
             {
-                string filterText = txt_Timsp.Text.Trim().ToLower();
+            string filterText = txt_Timsp.Text.Trim().ToLower();
 
-                // Duyệt qua tất cả các control trong p_Sanpham
-                foreach (Control control in p_Sanpham.Controls)
+            foreach (Control control in p_Sanpham.Controls)
+            {
+                if (control is Button button)
                 {
-                    if (control is Button button)
+                    // So sánh tên sản phẩm trong Text
+                    string productName = button.Text.Split('\n')[0].ToLower();
+
+                    if (productName.Contains(filterText))
                     {
-                        // Kiểm tra văn bản trên Button (tên sản phẩm)
-                        if (button.Text.ToLower().Contains(filterText))
-                        {
-                            // Hiển thị nút nếu khớp
-                            button.Visible = true;
-                        }
-                        else
-                        {
-                            // Ẩn nút nếu không khớp
-                            button.Visible = false;
-                        }
+                        button.Visible = true;
+                    }
+                    else
+                    {
+                        button.Visible = false;
                     }
                 }
             }
+        }
 
             private void cmb_Danhmuc_SelectedIndexChanged(object sender, EventArgs e)
             {
-                string selectedCategory = cmb_Danhmuc.SelectedItem.ToString();
+            string selectedCategory = cmb_Danhmuc.SelectedItem.ToString();
 
-                // Duyệt qua tất cả các Button trong p_Sanpham
-                foreach (Control control in p_Sanpham.Controls)
+            foreach (Control control in p_Sanpham.Controls)
+            {
+                if (control is Button button)
                 {
-                    if (control is Button button)
+                    string productCategory = GetProductCategory(button.Text.Split('\n')[0]);
+
+                    if (selectedCategory == "Tất cả sản phẩm" || productCategory == selectedCategory)
                     {
-                        // Hiển thị tất cả nếu chọn "Tất cả"
-                        if (selectedCategory == "Tất cả sản phẩm")
-                        {
-                            button.Visible = true;
-                        }
-                        else
-                        {
-                            // Kiểm tra nếu Button.Text khớp với danh mục
-                            if (button.Text.Contains(selectedCategory))
-                            {
-                                button.Visible = true;
-                            }
-                            else
-                            {
-                                button.Visible = false;
-                            }
-                        }
+                        button.Visible = true;
+                    }
+                    else
+                    {
+                        button.Visible = false;
                     }
                 }
             }
-
-            private void frmOrder_Load(object sender, EventArgs e)
+        }
+        private Dictionary<string, List<string>> productCategories = new Dictionary<string, List<string>>()
+{
+    { "Topping", new List<string> { "Hạt đác", "Trân châu trắng", "Trân châu Ô Long", "Trân châu đường đen", "Trái Vải", "Đào miếng", "Mứt nho", "Xí muội", "Kem Cheese" } }
+};
+        private void frmOrder_Load(object sender, EventArgs e)
             {
+            // Thêm các loại sản phẩm vào ComboBox
+                cmb_Danhmuc.Items.Add("Tất cả sản phẩm"); // Tùy chọn "Tất cả sản phẩm"
+                cmb_Danhmuc.Items.Add("Topping");
+               
+                cmb_Danhmuc.SelectedIndex = 0; // Đặt giá trị mặc định cho ComboBox
+
                 cmbKhach.Items.Add("Khách lẻ");
                 cmbKhach.Items.Add("Khách sỉ");
                 cmbKhach.SelectedIndex = 0;
@@ -483,9 +450,9 @@
                 parentForm.Show(); // Hiển thị lại frmHomepage khi form con đóng
             }
 
-            private void frmOrder_FormClosed(object sender, FormClosedEventArgs e)
-            {
-                Application.Exit();
-            }
-        }
+        private void frmOrder_FormClosed(object sender, FormClosedEventArgs e)
+         {
+             Application.Exit();
+         }
+     }
     }

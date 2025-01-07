@@ -70,7 +70,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(854, 474);
+            this.btnBack.Location = new System.Drawing.Point(1108, 474);
             this.btnBack.Name = "btnBack";
             this.btnBack.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnBack.Size = new System.Drawing.Size(116, 53);
@@ -90,22 +90,24 @@
             this.dgvRevenueReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRevenueReport.Size = new System.Drawing.Size(603, 375);
             this.dgvRevenueReport.TabIndex = 3;
+            this.dgvRevenueReport.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRevenueReport_CellClick);
             // 
             // dgvChiTietHoaDon
             // 
+            this.dgvChiTietHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChiTietHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietHoaDon.Location = new System.Drawing.Point(621, 93);
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             this.dgvChiTietHoaDon.RowHeadersWidth = 51;
             this.dgvChiTietHoaDon.RowTemplate.Height = 24;
-            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(349, 375);
+            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(603, 375);
             this.dgvChiTietHoaDon.TabIndex = 4;
             // 
             // frmRevenueReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 553);
+            this.ClientSize = new System.Drawing.Size(1232, 565);
             this.Controls.Add(this.dgvChiTietHoaDon);
             this.Controls.Add(this.dgvRevenueReport);
             this.Controls.Add(this.btnBack);

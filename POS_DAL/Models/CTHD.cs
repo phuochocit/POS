@@ -20,12 +20,13 @@ namespace POS_DAL.Models
         public string MASP { get; set; }
 
         //[StringLength(255)]
-        //public string TENKH { get; set; }
+        //public string TENSP { get; set; }
 
         [Column(TypeName = "money")]
-        public decimal GIATIEN { get; set; }
-
-        public int SL { get; set; }
+        //public decimal GIATIEN { get; set; }
+        //public int SL { get; set; }
+        public int? SL { get; set; }
+        public decimal? GIATIEN { get; set; }
 
         [Required]
         [StringLength(50)]

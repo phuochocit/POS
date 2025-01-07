@@ -36,14 +36,25 @@ namespace POS_System
             }
             homepageForm.Show(); 
         }
+        private void SetupComboBox()
+        {
+            // Thêm các lựa chọn ca làm việc
+            cmbThoiGian.Items.AddRange(new string[] {
+                "Ca 0: 06:00 - 22:00",
+                "Ca 1: 06:00 - 14:00",
+                "Ca 2: 14:00 - 22:00"
+            });
+            cmbThoiGian.SelectedIndex = 0;
+
+            // Gắn sự kiện SelectedIndexChanged
+            cmbThoiGian.SelectedIndexChanged += cmbThoiGian_SelectedIndexChanged;
+        }
         private void LoadHoaDon()
         {
             try
             {
-                HoaDonService hoaDonService = new HoaDonService();
                 List<HOADON> danhSachHoaDon = hoaDonService.GetAll(); // Lấy tất cả hóa đơn từ database
-                DINHGRID(danhSachHoaDon);
-                // Gán danh sách vào DataGridView
+                DINHGRID(danhSachHoaDon); // Hiển thị toàn bộ hóa đơn
             }
             catch (Exception ex)
             {
@@ -99,7 +110,8 @@ namespace POS_System
 
         private void frmHistory_Load(object sender, EventArgs e)
         {
-            LoadHoaDon();
+            SetupComboBox(); // Cài đặt ComboBox
+            LoadHoaDon(); // Tải hóa đơn ban đầu
         }
 
         private void btnBaocao_Click(object sender, EventArgs e)
@@ -123,52 +135,83 @@ namespace POS_System
         {
             
         }
-
         private void btnHuyDon_Click(object sender, EventArgs e)
         {
             if (dgvHistory.SelectedRows.Count > 0)
             {
-                string maHoaDon = dgvHistory.SelectedRows[0].Cells["MAHD"].Value.ToString(); // Lấy mã hóa đơn từ cột MAHD
-
-                DialogResult confirm = MessageBox.Show($"Bạn có chắc muốn hủy hóa đơn {maHoaDon}?", "Xác nhận", MessageBoxButtons.YesNo);
-                if (confirm == DialogResult.Yes)
+                var selectedRow = dgvHistory.SelectedRows[0];
+                if (selectedRow.Cells["MAHD"].Value != null)
                 {
-                    try
-                    {
-                        HoaDonService hoaDonService = new HoaDonService();
-                        hoaDonService.Delete(maHoaDon); // Xóa hóa đơn từ database
+                    string maHoaDon = selectedRow.Cells["MAHD"].Value.ToString();
 
-                        MessageBox.Show("Hóa đơn đã được hủy thành công", "Thông báo");
-                        LoadHoaDon(); // Cập nhật lại danh sách
-                    }
-                    catch (Exception ex)
+                    DialogResult confirm = MessageBox.Show($"Bạn có chắc muốn hủy hóa đơn {maHoaDon}?", "Xác nhận", MessageBoxButtons.YesNo);
+                    if (confirm == DialogResult.Yes)
                     {
-                        MessageBox.Show("Lỗi khi hủy hóa đơn: " + ex.Message, "Lỗi");
+                        try
+                        {
+                            HoaDonService hoaDonService = new HoaDonService();
+                            hoaDonService.Delete(maHoaDon); // Xóa hóa đơn từ database
+
+                            MessageBox.Show("Hóa đơn đã được hủy thành công", "Thông báo");
+                            LoadHoaDon(); // Cập nhật lại danh sách
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Lỗi khi hủy hóa đơn: " + ex.Message, "Lỗi");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể tìm thấy mã hóa đơn trong dòng được chọn.", "Lỗi");
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn hóa đơn để hủy", "Thông báo");
+                }
             }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn hóa đơn để hủy", "Thông báo");
-            }
-        }
-        private void SetupComboBox()
-        {
-            cmbThoiGian.Items.AddRange(new string[] { "Hôm nay", "Tuần này", "Tháng này", "Tất cả" });
-            cmbThoiGian.SelectedIndex = 0;
-
-            // Gắn sự kiện SelectedIndexChanged
-            cmbThoiGian.SelectedIndexChanged += cmbThoiGian_SelectedIndexChanged;
         }
 
         private void cmbThoiGian_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            try
+            {
+                List<HOADON> danhSachHoaDon = hoaDonService.GetAll(); // Lấy toàn bộ danh sách hóa đơn từ database
+                List<HOADON> filteredList = new List<HOADON>();
+
+                string selectedShift = cmbThoiGian.SelectedItem.ToString();
+
+                // Lọc danh sách hóa đơn theo ca làm việc
+                if (selectedShift == "Ca 1: 06:00 - 14:00")
+                {
+                    filteredList = danhSachHoaDon
+                        .Where(hd => hd.THOIGIAN != null && hd.THOIGIAN.Value.Hour >= 6 && hd.THOIGIAN.Value.Hour < 14)
+                        .ToList();
+                }
+                else if (selectedShift == "Ca 2: 14:00 - 22:00")
+                {
+                    filteredList = danhSachHoaDon
+                        .Where(hd => hd.THOIGIAN != null && hd.THOIGIAN.Value.Hour >= 14 && hd.THOIGIAN.Value.Hour < 22)
+                        .ToList();
+                }
+                else if (selectedShift == "Ca 0: 06:00 - 22:00")
+                {
+                    filteredList = danhSachHoaDon; // Hiển thị tất cả
+                }
+
+                DINHGRID(filteredList); // Hiển thị lại DataGridView
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lọc hóa đơn: " + ex.Message, "Lỗi");
+            }
         }
 
         private void frmHistory_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit(); 
         }
+
+        
     }
 }

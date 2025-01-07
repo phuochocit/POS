@@ -23,23 +23,25 @@ namespace POS_BUS
         {
             try
             {
-                // Tìm hóa đơn theo mã
-                var hoaDon = context.HOADON.FirstOrDefault(h => h.MAHD == maHoaDon);
+                using (var context = new POSContextDB())
+                {
+                    // Tìm hóa đơn theo mã
+                    var hoaDon = context.HOADON.FirstOrDefault(h => h.MAHD == maHoaDon);
 
-                if (hoaDon != null)
-                {
-                    // Xóa hóa đơn
-                    context.HOADON.Remove(hoaDon);
-                    context.SaveChanges(); // Lưu thay đổi vào cơ sở dữ liệu
-                }
-                else
-                {
-                    throw new Exception("Hóa đơn không tồn tại");
+                    if (hoaDon != null)
+                    {
+                        // Xóa các chi tiết hóa đơn liên quan trước
+                        context.CTHD.RemoveRange(hoaDon.CTHD);
+
+                        // Xóa hóa đơn
+                        context.HOADON.Remove(hoaDon);
+                        context.SaveChanges();
+                    }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi khi xóa hóa đơn: " + ex.Message);
+                throw new Exception($"Lỗi khi xóa hóa đơn: {ex.Message}", ex);
             }
         }
     }

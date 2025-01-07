@@ -37,12 +37,35 @@ namespace POS_System
             this.cartItems = cartItems;
             DisplayCartItems();
         }
+        private void InitializeSelectedProductsTable()
+        {
+            if (selectedProductsTable.Columns.Count == 0)
+            {
+                selectedProductsTable.Columns.Add("Mã Sản Phẩm", typeof(string)); // MASP
+                selectedProductsTable.Columns.Add("Tên Sản Phẩm", typeof(string)); // TENSP
+                selectedProductsTable.Columns.Add("Số Lượng", typeof(int)); // SL
+                selectedProductsTable.Columns.Add("Giá Tiền", typeof(decimal)); // GIATIEN
+                selectedProductsTable.Columns.Add("Thành Tiền", typeof(decimal)); // SL * GIATIEN
+            }
+        }
         private void DisplayCartItems()
         {
-            // Hiển thị dữ liệu giỏ hàng trên DataGridView trong Form2
+            //// Hiển thị dữ liệu giỏ hàng trên DataGridView trong Form2
+            //foreach (var item in cartItems)
+            //{
+            //    selectedProductsTable.Rows.Add(item.MASP, item.TENSP, item.SL, item.GIATIEN, item.SL * item.GIATIEN);
+            //}
+            InitializeSelectedProductsTable(); // Đảm bảo bảng được định nghĩa
+
             foreach (var item in cartItems)
             {
-                selectedProductsTable.Rows.Add(item.MASP, item.TENSP, item.SL, item.GIATIEN, item.SL * item.GIATIEN);
+                selectedProductsTable.Rows.Add(
+                    item.MASP,
+                    item.TENSP,
+                    item.SL,
+                    item.GIATIEN,
+                    item.SL * item.GIATIEN
+                );
             }
         }
 
@@ -184,7 +207,7 @@ namespace POS_System
         }
         private void btn_quayLai_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void btn_taoHD_Click(object sender, EventArgs e)
@@ -283,7 +306,7 @@ namespace POS_System
 
                         dbContext.SaveChanges();
                         MessageBox.Show("Thanh toán thành công!", "Thông báo");
-                        this.Close();
+                        this.Hide();
                         orderForm.ResetCart(); // Reset giỏ hàng trong `frmOrder`
                     }
                 }
